@@ -10,9 +10,9 @@ WIN_COMBINATIONS = [
   [6,7,8], # Bottom row
   [0,3,6], # Left column
   [1,4,7], # Middle columns
-  [2,5,8]  # Right Column
+  [2,5,8],  # Right Column
   [0,4,8], # Diagonal Left-to-Right
-  [2,4,6], # Diagonal Right-to_Left
+  [2,4,6] # Diagonal Right-to_Left
 ]
 
 #Won? Method
