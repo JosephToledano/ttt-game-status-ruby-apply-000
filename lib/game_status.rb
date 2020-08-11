@@ -16,3 +16,25 @@ WIN_COMBINATIONS = [
 ]
 
 #Won? Method
+#Checking to see if somebody won and displaying the board
+def won?(board)
+  WIN_COMBINATIONS.each {|winning_combination|
+    win_index_0 = WIN_COMBINATIONS[0]
+    win_index_1 = WIN_COMBINATIONS[1]
+    win_index_2 = WIN_COMBINATIONS[2]
+
+
+    position_1 = board[win_index_1] # load the value of the board at win_index_1
+    position_2 = board[win_index_2] # load the value of the board at win_index_2
+    position_3 = board[win_index_3] # load the value of the board at win_index_3
+
+    # Checking to see if there's a winning combination and representing the winning indices
+    if position_1 == "X" && position_2 == "X" && position_3 == "X"
+      return win_combination
+
+    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+       return win_combo
+     end
+   }
+   return false
+ end
