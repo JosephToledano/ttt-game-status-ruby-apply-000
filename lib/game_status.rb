@@ -37,12 +37,14 @@ end
 
  #Checking to see if there's a draw
  def draw?(board)
-   if full?(board) && !(won?(board))
+   if !won?(board) && full?(board)
      return true
-   else
+   elsif !won?(board) && !full?(board)
+     return false
+   else won?(board)
      return false
    end
- end
+end
 
  #Checking to see if the game is over
  def over?(board)
