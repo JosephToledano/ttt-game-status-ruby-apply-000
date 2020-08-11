@@ -38,3 +38,41 @@ def won?(board)
    }
    return false
  end
+
+ #Checking to see if every space on the board is taken
+ def full?(board)
+   board.all? {|index| index = "X" || index = "O"}
+ end
+
+ #Checking to see if there's a draw
+ def draw?(board)
+   if !won?(board) && full?(board)
+     return true
+   else
+     return false
+   end
+ end
+
+ #Checking to see if the game is over
+ def over?(board)
+   if won?(board) || full?(board) || draw?(board)
+     return true
+   else
+     return false
+   end
+ end
+
+ #Showing the "X" or "O" that has won the game
+ def winner (board)
+   index = []
+   index = won?(board)
+   if index == false
+     return nil
+   else
+     if board[index[0]] == "X"
+       return "X"
+     else
+       return "O"
+     end
+   end
+ end
