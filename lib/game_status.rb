@@ -32,8 +32,8 @@ end
 
  #Checking to see if every space on the board is taken
  def full?(board)
-   board.all? {|index| index = "X" || index = "O"}
- end
+  !board.any? { |x| x == " " }
+end
 
  #Checking to see if there's a draw
  def draw?(board)
