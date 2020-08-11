@@ -25,14 +25,14 @@ def won?(board)
    position_1 = board[win_index_1] # value of board at win_index_1
    position_2 = board[win_index_2] # value of board at win_index_2
    position_3 = board[win_index_3] # value of board at win_index_3
-   
+
    position_1 == position_2 && position_2 == position_3 && position_taken?(board, win_index_1)
  end
 end
 
  #Checking to see if every space on the board is taken
  def full?(board)
-  board.all? {|index| index == "X" || index == "O"}
+   board.all? {|i| i == "X" || i == "O"}
 end
 
  #Checking to see if there's a draw
