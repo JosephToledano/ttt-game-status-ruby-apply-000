@@ -18,19 +18,19 @@ WIN_COMBINATIONS = [
 #Won? Method
 #Checking to see if somebody won and displaying the board
 def won?(board)
-  WIN_COMBINATIONS.each {|win_combo|
-    index_0 = win_combo[0]
-    index_1 = win_combo[1]
-    index_2 = win_combo[2]
+  WIN_COMBINATIONS.each {|winning_combo|
+    index0 = winning_combo[0]
+    index1 = winning_combo[1]
+    index2 = winning_combo[2]
 
-    position_1 = board[index_0]
-    position_2 = board[index_1]
-    position_3 = board[index_2]
+    position_1 = board[index0]
+    position_2 = board[index1]
+    position_3 = board[index2]
 
     if position_1 == "X" && position_2 == "X" && position_3 == "X"
-      return win_combo
+      return winning_combo
     elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
-      return win_combo
+      return winning_combo
     end
   }
   return false
@@ -53,14 +53,24 @@ end
 
  #Checking to see if the game is over
  def over?(board)
-   if draw?(board) || won?(board) || full?(board)
-     return true
-   end
+  if won?(board) || full?(board) || draw?(board)
+    return true
+  else
+    return false
+  end
 end
 
  #Showing the "X" or "O" that has won the game
  def winner(board)
-   if won?(board)
-      return board[won?(board)[0]]
-   end
+   iindex = []
+  index = won?(board)
+  if index == false
+    return nil
+  else
+    if board[index[0]] == "X"
+      return "X"
+    else
+      return "O"
+    end
+  end
 end
