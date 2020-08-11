@@ -37,19 +37,19 @@ end
  def draw?(board)
    if full?(board) && !(won?(board))
      return true
-   else 
+   else
      return false
    end
  end
 
  #Checking to see if the game is over
  def over?(board)
-   if won?(board) || full?(board) || draw?(board)
-     return true
-   else
-     return false
-   end
- end
+   if full?(board) || !(won?(board)) || draw?(board)
+    return true
+  else
+    return false 
+  end
+end
 
  #Showing the "X" or "O" that has won the game
  def winner (board)
