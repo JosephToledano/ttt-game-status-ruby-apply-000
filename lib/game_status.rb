@@ -30,7 +30,7 @@ def won?(board)
     # Checking to see if there's a winning combination and representing the winning indices
     if position_1 == "X" && position_2 == "X" && position_3 == "X"
           return winning_combination
-        elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
+    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
           return winning_combination
      end
    }
