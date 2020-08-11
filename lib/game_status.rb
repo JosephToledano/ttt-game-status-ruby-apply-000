@@ -40,7 +40,8 @@ end
   if !won?(board) && full?(board)
     return true
   else
-    return false 
+    return false
+  end 
 end
 
  #Checking to see if the game is over
