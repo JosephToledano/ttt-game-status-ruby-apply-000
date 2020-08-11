@@ -18,24 +18,17 @@ WIN_COMBINATIONS = [
 #Won? Method
 #Checking to see if somebody won and displaying the board
 def won?(board)
-  WIN_COMBINATIONS.each {|winning_combination|
-    win_index_0 = winning_combination[0]
-    win_index_1 = winning_combination[1]
-    win_index_2 = winning_combination[2]
-
-    position_1 = board[win_index_1] # load the value of the board at win_index_1
-    position_2 = board[win_index_2] # load the value of the board at win_index_2
-    position_3 = board[win_index_3] # load the value of the board at win_index_3
-
-    # Checking to see if there's a winning combination and representing the winning indices
-    if position_1 == "X" && position_2 == "X" && position_3 == "X"
-          return winning_combination
-    elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
-          return winning_combination
-     end
-   }
-   return false
- end
+winner = []
+empty_board = board.all? {|x| x == " "}
+WIN_COMBINATIONS.each do |sub_array|
+    if empty_board || full?(board)
+      return false
+    elsif sub_array.all? { |value| board[value] =="X" } || sub_array.all? { |value| board[value] =="O" }
+      winner = sub_array
+    end
+  end
+  winner
+end
 
  #Checking to see if every space on the board is taken
  def full?(board)
