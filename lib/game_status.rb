@@ -5,30 +5,28 @@ end
 
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
-  [0,1,2], #Top row
- [3,4,5], #Middle row
- [6,7,8], #Bottom row
- [0,3,6], #Left column
- [1,4,7], #Middle column
- [2,5,8], #Right column
- [0,4,8], #Left start diagonal
- [2,4,6]  #Right start diagonal
+[0,1,2],
+[3,4,5],
+[6,7,8],
+[0,3,6],
+[1,4,7],
+[2,5,8],
+[0,4,8],
+[2,4,6]
 ]
 
 #Won? Method
 #Checking to see if somebody won and displaying the board
 def won?(board)
-winner = []
-empty_board = board.all? {|x| x == " "}
-WIN_COMBINATIONS.each do |sub_array|
-    if empty_board || full?(board)
-      return false
-    elsif sub_array.all? { |value| board[value] =="X" } || sub_array.all? { |value| board[value] =="O" }
-      winner = sub_array
+  WIN_COMBINATIONS.each do |winner_combo|
+      if board[winner_combo[0]] == board[winner_combo[1]] &&
+         board[winner_combo[1]] == board[winner_combo[2]] &&
+         position_taken?(board, winner_combo[0])
+         return true
+         return winner_combo
+      end
     end
   end
-  winner
-end
 
  #Checking to see if every space on the board is taken
  def full?(board)
