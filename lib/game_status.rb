@@ -54,16 +54,8 @@ end
 end
 
  #Showing the "X" or "O" that has won the game
- def winner (board)
-   index = []
-   index = won?(board)
-   if index == false
-     return nil
-   else
-     if board[index[0]] == "X"
-       return "X"
-     else
-       return "O"
-     end
+ def winner(board)
+   if won?(board)
+      return board[won?(board)[0]]
    end
- end
+end
