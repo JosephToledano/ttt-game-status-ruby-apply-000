@@ -32,7 +32,7 @@ end
 
  #Checking to see if every space on the board is taken
  def full?(board)
-  !board.any? { |x| x == " " }
+  board.all? {|index| index == "X" || index == "O"}
 end
 
  #Checking to see if there's a draw
@@ -41,7 +41,7 @@ end
     return true
   else
     return false
-  end 
+  end
 end
 
  #Checking to see if the game is over
