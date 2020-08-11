@@ -48,11 +48,9 @@ end
 
  #Checking to see if the game is over
  def over?(board)
-   if full?(board) || !(won?(board)) || draw?(board)
-    return true
-  else
-    return false
-  end
+   if draw?(board) || won?(board) || full?(board)
+     return true
+   end
 end
 
  #Showing the "X" or "O" that has won the game
