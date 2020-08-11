@@ -23,7 +23,6 @@ def won?(board)
     win_index_1 = winning_combination[1]
     win_index_2 = winning_combination[2]
 
-
     position_1 = board[win_index_1] # load the value of the board at win_index_1
     position_2 = board[win_index_2] # load the value of the board at win_index_2
     position_3 = board[win_index_3] # load the value of the board at win_index_3
@@ -33,7 +32,6 @@ def won?(board)
           return winning_combination
         elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
           return winning_combination
-
      end
    }
    return false
